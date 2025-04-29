@@ -1,0 +1,13 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-native-app-svc
+spec:
+  selector:
+    app: cloud-native
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    targetPort: 5000
+    port: 5000

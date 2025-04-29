@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-native-app
+  namespace: default
+  labels:
+    app: cloud-native
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: cloud-native
+  template:
+    metadata:
+      labels:
+        app: cloud-native
+    spec:
+      containers:
+      - name: monitoring-app
+        image: 503561432545.dkr.ecr.ap-south-1.amazonaws.com/cloud-monitoring-app-24:latest
+        ports:
+          - containerPort: 5000
