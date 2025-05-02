@@ -2,8 +2,8 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: my-cluster-1
-  region: ap-south-1
+  name: my-cluster-24
+  region: us-west-1
 nodeGroups:
   - name: small-ng
     instanceType: t2.medium

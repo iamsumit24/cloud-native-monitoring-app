@@ -2,9 +2,10 @@
 
 import boto3
 
-ecr_client = boto3.client('ecr')
+# ✅ Make sure this is your correct AWS region (e.g., 'ap-south-1' for Mumbai)
+ecr_client = boto3.client('ecr', region_name='ap-south-1')
 
-repo_name = "cloud-monitoring-app-12"
+repo_name = "cloud-native-monitoring-app"
 
 response = ecr_client.create_repository(
     repositoryName=repo_name
@@ -12,3 +13,4 @@ response = ecr_client.create_repository(
 
 repo_uri = response['repository']['repositoryUri']
 print(repo_uri)
+
